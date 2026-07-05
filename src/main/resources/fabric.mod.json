@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "fake-krypton-client",
+  "version": "${version}",
+  "name": "Fake Krypton Client",
+  "description": "Sadece gorsel, ISLEVSIZ bir ClickGUI. Hicbir modul oyun ici davranisi degistirmez. Gercek bir hile client'i degildir.",
+  "authors": [
+    "You"
+  ],
+  "contact": {},
+  "license": "CC0-1.0",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.fakekryptonclient.FakeKryptonClientClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
