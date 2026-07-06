@@ -23,10 +23,10 @@ import java.util.List;
  */
 public class ClickGuiScreen extends Screen {
 
-    private static final int PANEL_WIDTH = 170;
-    private static final int HEADER_HEIGHT = 22;
-    private static final int ROW_HEIGHT = 20;
-    private static final int PANEL_GAP = 10;
+    private static final int PANEL_WIDTH = 130;
+    private static final int HEADER_HEIGHT = 16;
+    private static final int ROW_HEIGHT = 14;
+    private static final int PANEL_GAP = 6;
 
     private final List<Category> categories = new ArrayList<>();
 
