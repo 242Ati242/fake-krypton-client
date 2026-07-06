@@ -24,7 +24,7 @@ public class FakeKryptonClientClient implements ClientModInitializer {
                 "key.fake-krypton-client.open_gui",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
-                "category.fake-krypton-client.general"
+                KeyBinding.Category.MISC
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
