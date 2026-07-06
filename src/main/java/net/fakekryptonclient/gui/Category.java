@@ -38,4 +38,8 @@ public class Category {
     public void toggleExpanded() {
         expanded = !expanded;
     }
+
+    public void setExpanded(boolean expanded) {
+        this.expanded = expanded;
+    }
 }
