@@ -1,6 +1,7 @@
 package net.fakekryptonclient.gui;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
@@ -219,7 +220,10 @@ public class ClickGuiScreen extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    public boolean mouseClicked(Click click, boolean doubled) {
+        double mouseX = click.x();
+        double mouseY = click.y();
+        int button = click.button();
         if (button == 0) {
             for (Category category : categories) {
                 int x = (int) category.x;
@@ -272,23 +276,23 @@ public class ClickGuiScreen extends Screen {
                 }
             }
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.mouseClicked(click, doubled);
     }
 
     @Override
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
-        if (draggingCategory != null && button == 0) {
-            draggingCategory.x = (float) (mouseX - dragOffsetX);
-            draggingCategory.y = (float) (mouseY - dragOffsetY);
+    public boolean mouseDragged(Click click, double deltaX, double deltaY) {
+        if (draggingCategory != null && click.button() == 0) {
+            draggingCategory.x = (float) (click.x() - dragOffsetX);
+            draggingCategory.y = (float) (click.y() - dragOffsetY);
             return true;
         }
-        return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
+        return super.mouseDragged(click, deltaX, deltaY);
     }
 
     @Override
-    public boolean mouseReleased(double mouseX, double mouseY, int button) {
+    public boolean mouseReleased(Click click) {
         draggingCategory = null;
-        return super.mouseReleased(mouseX, mouseY, button);
+        return super.mouseReleased(click);
     }
 
     @Override
