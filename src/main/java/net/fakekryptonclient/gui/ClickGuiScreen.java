@@ -128,9 +128,6 @@ public class ClickGuiScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        // Arka planı karartmadan oyun dünyasını arkada göster.
-        this.renderBackground(context, mouseX, mouseY, delta);
-
         for (Category category : categories) {
             renderCategory(context, category, mouseX, mouseY);
         }
